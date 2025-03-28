@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://files.catbox.moe/suqu63.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOKER-V1</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', 'Roboto', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Full-Screen Animated Background */
+    #background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: zoomShake 20s infinite;
+      transition: opacity 1s;
+    }
+
+    .background-image.active {
+      opacity: 1;
+    }
+
+    @keyframes zoomShake {
+      0% {
+        transform: scale(1) translate(0);
+      }
+      25% {
+        transform: scale(1.05) translate(5px, 0);
+      }
+      50% {
+        transform: scale(1.1) translate(-5px, 0);
+      }
+      75% {
+        transform: scale(1.05) translate(5px, 0);
+      }
+      100% {
+        transform: scale(1) translate(0);
+      }
+    }
+
+    /* Title Section */
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px #000;
+      animation: slideIn 2s ease-in-out, colorMove 3s linear infinite;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-shadow: 1px 1px 3px #000;
+      margin-bottom: 2rem;
+      animation: slideIn 2s ease-in-out 0.5s, colorMove 3s linear infinite;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes colorMove {
+      0% {
+        color: #ff6347; /* Tomato */
+      }
+      25% {
+        color: #1e90ff; /* Dodger Blue */
+      }
+      50% {
+        color: #32cd32; /* Lime Gray */
+      }
+      75% {
+        color: #ff1493; /* Deep Pink */
+      }
+      100% {
+        color: #ff6347; /* Tomato */
+      }
+    }
+
+    /* Main Buttons (QR Code and Pair Code) */
+    .main-btn {
+      width: 300px;
+      padding: 1em;
+      margin: 1em;
+      background: linear-gradient(90deg, #4caf50, #00c853);
+      color: white;
+      text-transform: uppercase;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+      position: relative;
+      animation: discoLights 1s infinite alternate;
+    }
+
+    /* Disco lights effect for QR and Pair Code buttons */
+    @keyframes discoLights {
+      0% {
+        box-shadow: 0 0 15px 5px #ff6347, 0 0 25px 5px #ff6347;
+        background-color: #4caf50;
+      }
+      25% {
+        box-shadow: 0 0 15px 5px #32cd32, 0 0 25px 5px #32cd32;
+        background-color: #00c853;
+      }
+      50% {
+        box-shadow: 0 0 15px 5px #1e90ff, 0 0 25px 5px #1e90ff;
+        background-color: #4caf50;
+      }
+      75% {
+        box-shadow: 0 0 15px 5px #ff1493, 0 0 25px 5px #ff1493;
+        background-color: #00c853;
+      }
+      100% {
+        box-shadow: 0 0 15px 5px #ff6347, 0 0 25px 5px #ff6347;
+        background-color: #4caf50;
+      }
+    }
+
+    .main-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Transparent Small Buttons */
+    .small-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      padding: 0.5em;
+      margin: 0.5em;
+      background: rgba(0, 0, 0, 0.5); /* Transparent effect */
+      color: white;
+      text-transform: uppercase;
+      border-radius: 8px;
+      border: 1px solid #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      text-decoration: none;
+    }
+
+    .small-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .small-btn img {
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Animation -->
+  <div id="background-container">
+    <img src="https://files.catbox.moe/z79k6l.jpeg" class="background-image active" id="bg1">
+    <img src="https://files.catbox.moe/suqu63.jpeg" class="background-image" id="bg2">
+    <img scr="https://files.catbox.moe/suqu63.jpeg" id="bg3">
+  </div>
+
+  <!-- Title -->
+  <div class="title">рџ¤–JOKER-V1рџ¤–</div>
+  <div class="subtitle">JOKER-V1 created by Black joker</div>
+
+  <!-- Main Buttons -->
+  <a href="/pair" class="main-btn">Pair Code</a>
+
+  <!-- Small Transparent Buttons -->
+  <a href="https://wa.me/2250701832564?text=Hello+Bro+i'm+From+your+session+id+website" class="small-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Chat with Developer
+  </a>
+  <a href="https://whatsapp.com/channel/0029VaqVli82P59qb2ollV2R" class="small-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Follow my WhatsApp Channel
+  </a>
+  <a href="https://t.me/creepytwchnology" class="small-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> Join My Telegram Channel
+  </a>
+  <a href="https://github.com/jaxgod" class="small-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"> Follow me on GitHub
+  </a>
+
+  <!-- Script for Animated Background -->
+  <script>
+    const backgrounds = document.querySelectorAll('.background-image');
+    let current = 0;
+
+    setInterval(() => {
+      backgrounds[current].classList.remove('active');
+      current = (current + 1) % backgrounds.length;
+      backgrounds[current].classList.add('active');
+    }, 10000); // Switch background every 10 seconds
+  </script>
+</body>
+</html>
