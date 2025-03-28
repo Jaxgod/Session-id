@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
-res.sendFile(path.join(__dirname, 'public', 'index.html.save'));
+res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
 });
