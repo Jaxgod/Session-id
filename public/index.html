@@ -202,7 +202,20 @@
 
   <!-- Main Buttons -->
   <a href="/pair" class="main-btn">Pair Code</a>
+<button class="btn" onclick="connectPairCode()">Se connecter avec un Pair Code</button>
+  <button class="btn" onclick="connectQrCode()">Se connecter avec un QR Code</button>
 
+  <script>
+    function connectPairCode() {
+      window.location.href = "https://web.whatsapp.com/pair"; // Lien vers la page officielle
+    }
+    
+    function connectQrCode() {
+      window.location.href = "https://web.whatsapp.com"; // Redirige vers le QR code officiel
+    }
+  </script>
+</body>
+</html>
   <!-- Small Transparent Buttons -->
   <a href="https://wa.me/2250701832564?text=Hello+Bro+i'm+From+your+session+id+website" class="small-btn">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Chat with Developer
