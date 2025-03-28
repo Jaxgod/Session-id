@@ -4,13 +4,13 @@
   },
   "name": "joker-v1-website",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Black-Joker",
   "license": "ISC",
-  "description": ""
+  "description": "mon bot en ligne"
 }
