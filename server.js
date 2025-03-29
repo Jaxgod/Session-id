@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'public', 'index.html','style.css'));
+app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'public', 'index.html','pair'));
 });
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
